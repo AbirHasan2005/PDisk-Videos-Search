@@ -1,0 +1,64 @@
+{
+    "name": "PDisk-Videos-Search",
+    "description": "A Telegram bot for searching videos in your PDisk account by @AbirHasan2005.",
+    "keywords": [
+        "telegram",
+        "bot",
+        "pdisk",
+        "account",
+        "videos",
+        "search"
+    ],
+    "repository": "https://github.com/AbirHasan2005/PDisk-Videos-Search",
+    "website": "https://github.com/AbirHasan2005/PDisk-Videos-Search",
+    "success_url": "https://github.com/AbirHasan2005/PDisk-Videos-Search",
+    "env": {
+        "API_ID": {
+            "description": "Get from https://t.me/TeleORG_Bot",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Get from https://t.me/TeleORG_Bot",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Get from https://t.me/BotFather",
+            "required": true
+        },
+        "PDISK_USERNAME": {
+            "description": "Your PDisk Account Username/Email",
+            "required": true
+        },
+        "PDISK_PASSWORD": {
+            "description": "Your PDisk Account Password",
+            "required": true
+        },
+        "MAX_RESULTS": {
+            "description": "Max Search Results Number",
+            "required": true
+        },
+        "PDISK_DOMAIN": {
+            "description": "PDisk Default Domain",
+            "required": false,
+            "value": "https://www.pdisk.net/"
+        }
+    },
+    "stack": "heroku-20",
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
+        },
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
