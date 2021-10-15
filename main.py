@@ -64,7 +64,7 @@ async def text_handler(_, m: Message):
         traceback.print_exc()
         try: await editable.edit("Failed to search!",
                                  reply_markup=InlineKeyboardMarkup([
-                                     [InlineKeyboardButton("Sumpot Group", url="https://t.me/JoinOT")]
+                                     [InlineKeyboardButton("Support Group", url="https://t.me/JoinOT")]
                                  ]))
         except MessageNotModified: pass
     elif not response["data"]["list"]:
