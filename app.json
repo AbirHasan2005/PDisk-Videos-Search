@@ -38,7 +38,7 @@
             "required": true
         },
         "AUTH_CHATS": {
-            "description": "Allow only authorized users to use the request command",
+            "description": "Allow only authorized users to use the request command. Put user IDs or Chat IDs. For multiple IDs separate using space.",
             "required": false
         },
         "PDISK_DOMAIN": {
