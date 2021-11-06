@@ -8,6 +8,7 @@ A Telegram bot for searching videos in your PDisk account by [@AbirHasan2005](ht
 - `PDISK_USERNAME` - Your PDisk Account Username/Email
 - `PDISK_PASSWORD` - Your PDisk Account Password
 - `MAX_RESULTS` - Max Search Results Number
+- `AUTH_CHATS` - Allow only authorized users to use the request command
 - `PDISK_DOMAIN` - Choose any from `https://www.cofilink.com/`, `https://www.pdisk1.net/`, `https://www.pdisk.net/`
 
 ### Commands
