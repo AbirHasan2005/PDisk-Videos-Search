@@ -37,6 +37,10 @@
             "description": "Max Search Results Number",
             "required": true
         },
+        "AUTH_CHATS": {
+            "description": "Allow only authorized users to use the request command",
+            "required": false
+        },
         "PDISK_DOMAIN": {
             "description": "PDisk Default Domain",
             "required": false,
