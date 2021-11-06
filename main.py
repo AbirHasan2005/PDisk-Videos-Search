@@ -32,6 +32,7 @@ class Configs(object):
     PDISK_USERNAME = os.environ.get("PDISK_USERNAME", "")
     PDISK_PASSWORD = os.environ.get("PDISK_PASSWORD", "")
     MAX_RESULTS = int(os.environ.get("MAX_RESULTS", 5))
+    AUTH_CHATS = list(set(int(x) for x in os.environ.get("AUTH_CHATS", "0").split()))
     # Which PDisk Domain?
     PDISK_DOMAINS = [
         "https://www.cofilink.com/",
@@ -48,13 +49,18 @@ PDiskBot = Client(
     bot_token=Configs.BOT_TOKEN
 )
 
+if (not AUTH_CHATS) or (AUTH_CHATS == [0]):
+    filters_markup = filters.command("request", prefixes=["#", "/"]) & ~filters.edited
+else:
+    filters_markup = filters.command("request", prefixes=["#", "/"]) & filters.chat(AUTH_CHATS) & ~filters.edited
+
 
 @PDiskBot.on_message(filters.command("start") & ~filters.edited)
 async def start_handler(_, m: Message):
     await m.reply_text("Hi, I am Alive!\n\nSearch using /request command.", quote=True)
 
 
-@PDiskBot.on_message(filters.command("request", prefixes=["#", "/"]) & ~filters.edited, group=-1)
+@PDiskBot.on_message(filters_markup, group=-1)
 async def text_handler(_, m: Message):
     if len(m.command) < 2:
         return await m.reply_text("Search Query Missing!")
