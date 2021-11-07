@@ -49,10 +49,10 @@ PDiskBot = Client(
     bot_token=Configs.BOT_TOKEN
 )
 
-if (not AUTH_CHATS) or (AUTH_CHATS == [0]):
+if (not Configs.AUTH_CHATS) or (Configs.AUTH_CHATS == [0]):
     filters_markup = filters.command("request", prefixes=["#", "/"]) & ~filters.edited
 else:
-    filters_markup = filters.command("request", prefixes=["#", "/"]) & filters.chat(AUTH_CHATS) & ~filters.edited
+    filters_markup = filters.command("request", prefixes=["#", "/"]) & filters.chat(Configs.AUTH_CHATS) & ~filters.edited
 
 
 @PDiskBot.on_message(filters.command("start") & ~filters.edited)
