@@ -35,6 +35,7 @@ class Configs(object):
     AUTH_CHATS = list(set(int(x) for x in os.environ.get("AUTH_CHATS", "0").split()))
     # Which PDisk Domain?
     PDISK_DOMAINS = [
+        "https://www.cdink.net/",
         "https://www.cofilink.com/",
         "https://www.pdisk1.net/",
         "https://www.pdisk.net/"
