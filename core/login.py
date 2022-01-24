@@ -9,13 +9,13 @@ from selenium.common.exceptions import (
     ElementClickInterceptedException
 )
 from selenium.webdriver.common.by import By
-
+from selenium.webdriver.chrome.options import Options
 
 async def pdisk_login(username: str, password: str):
     print("Bot on Standby ...")
     login_url = "https://www.pdisk.net/login?type=login"
     get_id_page_url = "https://www.pdisk.net/withdraw"
-    options = webdriver.ChromeOptions()
+    options = Options()
     options.add_argument("--headless")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
